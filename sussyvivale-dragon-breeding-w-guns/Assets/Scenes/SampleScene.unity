@@ -392,6 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooty: {fileID: 9019522084395816386, guid: d748424dc3e664cccac8d9ce0a15cfd6, type: 3}
   pos: {x: 0, y: 0, z: 0}
+  posx: 0
+  posy: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
