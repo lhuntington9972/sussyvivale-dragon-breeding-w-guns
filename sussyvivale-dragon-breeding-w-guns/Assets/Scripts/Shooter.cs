@@ -17,7 +17,7 @@ public class Shooter : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown("space")) {
+        if (Input.GetMouseButtonDown(0)) {
             posx = this.gameObject.transform.position.x;
             posy = this.gameObject.transform.position.y;
 

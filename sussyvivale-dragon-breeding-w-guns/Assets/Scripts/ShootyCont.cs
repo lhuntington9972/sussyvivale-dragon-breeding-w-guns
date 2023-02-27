@@ -11,7 +11,7 @@ public class ShootyCont : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         rb2D = this.gameObject.GetComponent<Rigidbody2D>();
-        thrust = new Vector2(1, 0);
+        thrust = new Vector2(0.1f, 0);
     }
 
     // Update is called once per frame
