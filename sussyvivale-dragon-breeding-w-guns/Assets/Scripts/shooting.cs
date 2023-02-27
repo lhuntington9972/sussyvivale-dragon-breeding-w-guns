@@ -9,11 +9,13 @@ public class shooting : MonoBehaviour
     private Vector3 mousePos;
 
     public GameObject bullet;
-    public Transform bulletTransform;
+
+    private Vector3 inst;
 
     // Start is called before the first frame update
     void Start() {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        inst = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class shooting : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
         if (Input.GetMouseButtonDown(0)) {
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+            Instantiate(bullet, inst, Quaternion.identity);
         }
     }
 }
