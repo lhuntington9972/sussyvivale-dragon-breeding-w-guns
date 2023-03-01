@@ -9,6 +9,7 @@ public class shooting : MonoBehaviour
     private Vector3 mousePos;
 
     public GameObject bullet;
+    public Transform instPoint;
 
     private Vector3 inst;
 
@@ -27,6 +28,8 @@ public class shooting : MonoBehaviour
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        inst = instPoint.position;
 
         if (Input.GetMouseButtonDown(0)) {
             Instantiate(bullet, inst, Quaternion.identity);

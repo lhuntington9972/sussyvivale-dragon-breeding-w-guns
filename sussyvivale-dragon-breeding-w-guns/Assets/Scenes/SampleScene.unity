@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 9019522084395816386, guid: d748424dc3e664cccac8d9ce0a15cfd6, type: 3}
-  bulletTransform: {fileID: 399035582452422291, guid: d748424dc3e664cccac8d9ce0a15cfd6, type: 3}
+  instPoint: {fileID: 1714552576}
 --- !u!1 &1714552575
 GameObject:
   m_ObjectHideFlags: 0
