@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9174741323410352540}
   m_Layer: 0
   m_Name: Shooty
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ba3539c87224fddbe9607b2be81113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  force: 0
