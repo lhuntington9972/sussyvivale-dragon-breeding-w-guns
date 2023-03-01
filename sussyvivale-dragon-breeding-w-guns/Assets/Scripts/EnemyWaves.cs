@@ -18,6 +18,9 @@ public class EnemyWaves : MonoBehaviour
 
     private bool running = false;
 
+    private float instPointx;
+    private float instPointy;
+
     // Start is called before the first frame update
     void Start() {
         waitTime = 3;
@@ -49,7 +52,11 @@ public class EnemyWaves : MonoBehaviour
         running = true;
 
         yield return new WaitForSeconds(waitTime);
-        Instantiate(enemy, new Vector3(x, y, 0), Quaternion.identity);
+
+        instPointx = Random.Range(-4.2f, 4.2f);
+        instPointy = Random.Range(-1.2f, 4.7f);
+
+        Instantiate(enemy, new Vector3(instPointx, instPointy, 0), Quaternion.identity);
         waveCount += 1;
 
         running = false;
