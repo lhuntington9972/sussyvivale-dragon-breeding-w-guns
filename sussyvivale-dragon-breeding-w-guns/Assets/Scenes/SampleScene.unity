@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -253,6 +254,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d379f1f185eeb42c0a8aad0582eb6cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLocation: {fileID: 577817390}
 --- !u!1 &577817383
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2138dd019628b4f4e9aaaf04f0b626a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pHealth: {fileID: 0}
   healthText: {fileID: 1331769413}
 --- !u!1 &894218834
 GameObject:
@@ -1065,7 +1080,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1962528868}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 95555d00c589440d4852b086b4a2daaa, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1934,7 +1949,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1962528868}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 95555d00c589440d4852b086b4a2daaa, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1963,7 +1978,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 95555d00c589440d4852b086b4a2daaa, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
