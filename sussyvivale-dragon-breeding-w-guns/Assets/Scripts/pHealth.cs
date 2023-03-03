@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pHealth : MonoBehaviour
 {
-    private int health;
+    public int health;
 
     // Start is called before the first frame update
     void Start() {
@@ -17,10 +17,12 @@ public class pHealth : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        health -= 1;
+        if (other.gameObject.tag == "Enemy") {
+            health -= 1;
+        }
 
-            if (health <= 0) {
-                Destroy(this.gameObject);
-            }
+        if (health <= 0) {
+            Destroy(this.gameObject);
+        }
     }
 }
