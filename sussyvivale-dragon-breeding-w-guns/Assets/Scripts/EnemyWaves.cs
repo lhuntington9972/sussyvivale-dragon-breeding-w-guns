@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyWaves : MonoBehaviour
 {
 
-    public GameObject enemy;
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public GameObject enemy3;
 
     private int x;
     private int y;
@@ -56,7 +58,7 @@ public class EnemyWaves : MonoBehaviour
         instPointx = Random.Range(-4.2f, 4.2f);
         instPointy = Random.Range(-1.2f, 4.7f);
 
-        Instantiate(enemy, new Vector3(instPointx, instPointy, 0), Quaternion.identity);
+        Instantiate(enemy2, new Vector3(instPointx, instPointy, 0), Quaternion.identity);
         waveCount += 1;
 
         running = false;

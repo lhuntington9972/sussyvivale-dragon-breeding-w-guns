@@ -15,8 +15,14 @@ public class EnemyCont : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
-        health = Random.Range(1, 5);
-        moveSpeed = 3;
+        if (this.gameObject.tag == "Enemy1") {
+            moveSpeed = 1;
+            health = Random.Range(3, 8);
+        }
+        else {
+            moveSpeed = 5;
+            health = Random.Range(2, 4);
+        }
 
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.Find("Player").transform;

@@ -26,7 +26,6 @@ public class TextController : MonoBehaviour
         healthText.text = "Health = " + hText;
 
         if (health_script.die == true) {
-            Debug.Log("YOO");
             screen.SetActive(true);
             dText.text = "You Died!!!";
         }

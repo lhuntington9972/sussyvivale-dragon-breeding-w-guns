@@ -18,7 +18,7 @@ public class pHealth : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Enemy") {
+        if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2") {
             health -= 1;
         }
 
@@ -26,5 +26,10 @@ public class pHealth : MonoBehaviour
             die = true;
             Destroy(this.gameObject);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        health = 0;
+        die = true;
     }
 }
