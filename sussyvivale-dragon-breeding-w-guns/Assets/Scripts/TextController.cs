@@ -6,16 +6,29 @@ using TMPro;
 
 public class TextController : MonoBehaviour
 {
-    public pHealth pHealth;
-
+    public GameObject player;
     public TMP_Text healthText;
+
+    private pHealth health_script;
+    private string hText;
+
+    public GameObject screen;
+    public TMP_Text dText;
 
     // Start is called before the first frame update
     void Start() {
+        health_script = player.GetComponent<pHealth>();
     }
 
     // Update is called once per frame
     void Update() {
-        healthText.text = pHealth.ToString();
+        hText = health_script.health.ToString();
+        healthText.text = "Health = " + hText;
+
+        if (health_script.die == true) {
+            Debug.Log("YOO");
+            screen.SetActive(true);
+            dText.text = "You Died!!!";
+        }
     }
 }

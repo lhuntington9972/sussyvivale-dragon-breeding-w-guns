@@ -5,10 +5,11 @@ using UnityEngine;
 public class pHealth : MonoBehaviour
 {
     public int health;
+    public bool die;
 
     // Start is called before the first frame update
     void Start() {
-        health = 10;
+        health = 3;
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class pHealth : MonoBehaviour
         }
 
         if (health <= 0) {
+            die = true;
             Destroy(this.gameObject);
         }
     }
