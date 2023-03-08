@@ -16,16 +16,20 @@ public class EnemyCont : MonoBehaviour
     private bool m_FacingRight = true;
 
     // Start is called before the first frame update
-    void Start() {
-        if (this.gameObject.tag == "Enemy1") {
+    void Start()
+    {
+        if (this.gameObject.tag == "Enemy1")
+        {
             moveSpeed = 3;
             health = Random.Range(11, 13);
         }
-        else if (this.gameObject.tag == "Enemy3") {
-            moveSpeed = 1;
+        else if (this.gameObject.tag == "Enemy3")
+        {
+            moveSpeed = 3;
             health = Random.Range(8, 10);
         }
-        else {
+        else
+        {
             moveSpeed = 6;
             health = Random.Range(3, 5);
         }
@@ -35,38 +39,62 @@ public class EnemyCont : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         Vector3 direction = (target.position - transform.position).normalized;
 
         moveDir = direction;
 
-        if (moveDir.x < 0) {
-            Flip();
+        if (moveDir.x < 0 && m_FacingRight == true)
+        {
+            FlipLeft();
+        }
+        else if (moveDir.x > 0 && m_FacingRight == false)
+        {
+            FlipRight();
         }
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         rb.velocity = new Vector2(moveDir.x, moveDir.y) * moveSpeed;
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Bullet") {
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
             health -= 1;
 
-            if (health <= 0) {
+            if (health <= 0)
+            {
                 Destroy(this.gameObject);
             }
         }
     }
 
-    private void Flip()
-	{
-		// Switch the way the player is labelled as facing.
-		m_FacingRight = !m_FacingRight;
+    private void FlipLeft()
+    {
 
-		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-	}
+        if (m_FacingRight == true)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1f;
+            transform.localScale = theScale;
+
+            m_FacingRight = false;
+        }
+    }
+
+    private void FlipRight()
+    {
+        if (m_FacingRight != true)
+        {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1f;
+            transform.localScale = theScale;
+
+            m_FacingRight = true;
+        }
+    }
 }
