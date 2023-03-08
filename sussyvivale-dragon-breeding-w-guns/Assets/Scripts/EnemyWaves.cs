@@ -23,6 +23,8 @@ public class EnemyWaves : MonoBehaviour
     private float instPointx;
     private float instPointy;
 
+    private int randNum;
+
     // Start is called before the first frame update
     void Start() {
         waitTime = 3;
@@ -32,7 +34,7 @@ public class EnemyWaves : MonoBehaviour
         x = 1;
         y = 1;
 
-        waveNums = new int[] {1, 4, 5};
+        waveNums = new int[] {2, 4, 5, 4, 5, 6, 7, 8, 6, 10, 11, 12, 10, 10, 8, 15, 20};
     }
 
     // Update is called once per frame
@@ -58,7 +60,18 @@ public class EnemyWaves : MonoBehaviour
         instPointx = Random.Range(-4.2f, 4.2f);
         instPointy = Random.Range(-1.2f, 4.7f);
 
-        Instantiate(enemy2, new Vector3(instPointx, instPointy, 0), Quaternion.identity);
+        randNum = Random.Range(1, 4);
+
+        if (randNum == 1) {
+            Instantiate(enemy1, new Vector3(instPointx, instPointy, 0), Quaternion.identity);
+        }
+        else if (randNum == 2) {
+            Instantiate(enemy2, new Vector3(instPointx, instPointy, 0), Quaternion.identity);
+        }
+        else {
+            Instantiate(enemy3, new Vector3(instPointx, instPointy, 0), Quaternion.identity);
+        }
+
         waveCount += 1;
 
         running = false;

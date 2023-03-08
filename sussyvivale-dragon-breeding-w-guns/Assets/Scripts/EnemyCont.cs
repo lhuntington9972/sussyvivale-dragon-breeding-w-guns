@@ -16,11 +16,15 @@ public class EnemyCont : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         if (this.gameObject.tag == "Enemy1") {
+            moveSpeed = 3;
+            health = Random.Range(6, 8);
+        }
+        else if (this.gameObject.tag == "Enemy3") {
             moveSpeed = 1;
-            health = Random.Range(3, 8);
+            health = Random.Range(10, 12);
         }
         else {
-            moveSpeed = 5;
+            moveSpeed = 6;
             health = Random.Range(2, 4);
         }
 

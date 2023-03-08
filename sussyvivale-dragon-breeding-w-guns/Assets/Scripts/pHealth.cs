@@ -18,7 +18,7 @@ public class pHealth : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2") {
+        if (other.gameObject.tag == "Enemy1" || other.gameObject.tag == "Enemy2" || other.gameObject.tag == "Bomb") {
             health -= 1;
         }
 

@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Enemy1
   - Enemy2
+  - Enemy3
+  - Bomb
   layers:
   - Default
   - TransparentFX
