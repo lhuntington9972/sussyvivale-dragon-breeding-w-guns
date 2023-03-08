@@ -34,7 +34,7 @@ public class EnemyWaves : MonoBehaviour
         x = 1;
         y = 1;
 
-        waveNums = new int[] {2, 4, 5, 4, 5, 6, 7, 8, 6, 10, 11, 12, 10, 10, 8, 15, 20};
+        waveNums = new int[] {2, 4, 5, 4, 5, 6, 7, 8, 6, 10, 11, 12, 10, 10, 8, 15, 20, 30, 40, 50, 60, 70, 100, 1000};
     }
 
     // Update is called once per frame
@@ -57,8 +57,8 @@ public class EnemyWaves : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        instPointx = Random.Range(-4.2f, 4.2f);
-        instPointy = Random.Range(-1.2f, 4.7f);
+        instPointx = Random.Range(-26f, 26f);
+        instPointy = Random.Range(1f, 6f);
 
         randNum = Random.Range(1, 4);
 

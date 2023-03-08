@@ -13,19 +13,21 @@ public class EnemyCont : MonoBehaviour
 
     private Vector2 moveDir;
 
+    private bool m_FacingRight = true;
+
     // Start is called before the first frame update
     void Start() {
         if (this.gameObject.tag == "Enemy1") {
             moveSpeed = 3;
-            health = Random.Range(6, 8);
+            health = Random.Range(11, 13);
         }
         else if (this.gameObject.tag == "Enemy3") {
             moveSpeed = 1;
-            health = Random.Range(10, 12);
+            health = Random.Range(8, 10);
         }
         else {
             moveSpeed = 6;
-            health = Random.Range(2, 4);
+            health = Random.Range(3, 5);
         }
 
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +39,10 @@ public class EnemyCont : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
 
         moveDir = direction;
+
+        if (moveDir.x < 0) {
+            Flip();
+        }
     }
 
     void FixedUpdate() {
@@ -52,4 +58,15 @@ public class EnemyCont : MonoBehaviour
             }
         }
     }
+
+    private void Flip()
+	{
+		// Switch the way the player is labelled as facing.
+		m_FacingRight = !m_FacingRight;
+
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
 }
